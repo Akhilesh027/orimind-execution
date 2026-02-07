@@ -9,19 +9,19 @@ const testimonials = [
     quote: "We shipped a complete product launch—landing page, email sequence, and ad creatives—in under an hour. That used to take our team two weeks.",
     name: "Mara Jensen",
     role: "Head of Growth, Luminary Labs",
-    avatar: "MJ",
+    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=80",
   },
   {
     quote: "OriMind doesn't feel like an AI tool. It feels like having a senior team that never sleeps. The multi-agent orchestration is genuinely impressive.",
     name: "David Chen",
     role: "CTO, BuildStack",
-    avatar: "DC",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80",
   },
   {
     quote: "As a solo founder, OriMind replaced three SaaS subscriptions and two freelancers. I describe what I need and it gets built.",
     name: "Priya Nair",
     role: "Founder, Artisan Commerce",
-    avatar: "PN",
+    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80",
   },
 ];
 
@@ -58,9 +58,12 @@ export function Testimonials() {
                   "{t.quote}"
                 </p>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-violet to-cyan flex items-center justify-center text-xs font-bold text-background">
-                    {t.avatar}
-                  </div>
+                  <img
+                    src={t.image}
+                    alt={t.name}
+                    loading="lazy"
+                    className="w-11 h-11 rounded-full object-cover border-2 border-white/10 group-hover:border-violet/40 transition-colors"
+                  />
                   <div>
                     <p className="text-sm font-semibold text-foreground">{t.name}</p>
                     <p className="text-xs text-muted-foreground">{t.role}</p>

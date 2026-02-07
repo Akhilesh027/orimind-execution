@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Reveal } from "@/components/shared/Reveal";
 import { TextReveal } from "@/components/shared/TextReveal";
+import { GlowText } from "@/components/shared/GlowText";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import { ArrowRight, Sparkles } from "lucide-react";
@@ -26,8 +27,16 @@ export function CtaSection() {
 
   return (
     <section className="section-padding relative overflow-hidden">
-      {/* Background effects */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-violet/5 to-transparent" />
+      {/* Background image with overlay */}
+      <div className="absolute inset-0">
+        <img
+          src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80"
+          alt=""
+          className="w-full h-full object-cover opacity-10"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/90 to-background" />
+      </div>
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] rounded-full bg-violet/[0.06] blur-[150px] pointer-events-none" />
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-violet/30 to-transparent" />
 
@@ -51,9 +60,12 @@ export function CtaSection() {
           </Reveal>
 
           <Reveal delay={0.1}>
-            <p className="text-lg text-muted-foreground mb-10 max-w-xl mx-auto">
+            <GlowText
+              keywords={["early access", "execution age"]}
+              className="text-lg text-muted-foreground mb-10 max-w-xl mx-auto"
+            >
               Join the waitlist for early access to the execution age.
-            </p>
+            </GlowText>
           </Reveal>
 
           <Reveal delay={0.2}>
