@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 
 const navLinks = [
   { label: "About", href: "/about" },
-  { label: "Infinall", href: "/infinall" },
+  { label: "Product", href: "/product" },
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ];
@@ -66,7 +66,7 @@ export function Navbar() {
 
           <div className="hidden md:flex items-center gap-3">
             <Button variant="gradient" size="sm" asChild>
-              <Link to="/waitlist">Join Waitlist</Link>
+              <Link to="/contact">Get in Touch</Link>
             </Button>
           </div>
 
@@ -100,7 +100,7 @@ export function Navbar() {
                 </Link>
               ))}
               <Button variant="gradient" size="lg" asChild className="mt-4">
-                <Link to="/waitlist">Join Waitlist</Link>
+                <Link to="/contact">Get in Touch</Link>
               </Button>
             </div>
           </motion.div>

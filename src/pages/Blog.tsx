@@ -4,6 +4,13 @@ import { Reveal } from "@/components/shared/Reveal";
 import { GradientOrbs } from "@/components/shared/GradientOrbs";
 import { blogPosts } from "@/data/blog-posts";
 import { ArrowRight, Search } from "lucide-react";
+import { motion } from "framer-motion";
+
+const featuredImages: Record<string, string> = {
+  "execution-over-automation": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&q=80",
+  "multi-agent-workflows": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80",
+  "prompt-to-deployment": "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&q=80",
+};
 
 export default function Blog() {
   const [search, setSearch] = useState("");
@@ -42,23 +49,39 @@ export default function Blog() {
 
       <section className="section-padding pt-8">
         <div className="container-wide">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {filtered.map((post, i) => (
               <Reveal key={post.slug} delay={i * 0.08}>
                 <Link to={`/blog/${post.slug}`} className="block group">
-                  <div className="glass rounded-2xl p-6 h-full hover:border-violet/20 hover:bg-white/[0.06] transition-all">
-                    <div className="flex items-center gap-3 mb-4">
-                      <span className="text-xs font-medium text-cyan px-2 py-0.5 rounded-full bg-cyan/10">{post.category}</span>
-                      <span className="text-xs text-muted-foreground">{post.date}</span>
+                  <motion.div
+                    whileHover={{ y: -4 }}
+                    className="glass rounded-2xl overflow-hidden h-full hover:border-violet/20 transition-all"
+                  >
+                    {/* Featured image */}
+                    <div className="relative h-44 overflow-hidden">
+                      <img
+                        src={featuredImages[post.slug] || "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&q=80"}
+                        alt={post.title}
+                        loading="lazy"
+                        className="w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-110 transition-all duration-700"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--background))] via-[hsl(var(--background)/.5)] to-transparent" />
                     </div>
-                    <h2 className="text-lg font-semibold text-foreground mb-2 group-hover:text-violet transition-colors">
-                      {post.title}
-                    </h2>
-                    <p className="text-sm text-muted-foreground leading-relaxed mb-4">{post.excerpt}</p>
-                    <span className="inline-flex items-center gap-1 text-sm text-violet font-medium group-hover:gap-2 transition-all">
-                      Read more <ArrowRight size={14} />
-                    </span>
-                  </div>
+
+                    <div className="p-6">
+                      <div className="flex items-center gap-3 mb-3">
+                        <span className="text-xs font-medium text-cyan px-2 py-0.5 rounded-full bg-cyan/10">{post.category}</span>
+                        <span className="text-xs text-muted-foreground">{post.date}</span>
+                      </div>
+                      <h2 className="text-lg font-semibold text-foreground mb-2 group-hover:text-violet transition-colors">
+                        {post.title}
+                      </h2>
+                      <p className="text-sm text-muted-foreground leading-relaxed mb-4">{post.excerpt}</p>
+                      <span className="inline-flex items-center gap-1 text-sm text-violet font-medium group-hover:gap-2 transition-all">
+                        Read more <ArrowRight size={14} />
+                      </span>
+                    </div>
+                  </motion.div>
                 </Link>
               </Reveal>
             ))}

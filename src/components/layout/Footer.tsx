@@ -5,9 +5,8 @@ import { toast } from "sonner";
 
 const footerLinks = {
   Product: [
-    { label: "Infinall", href: "/infinall" },
+    { label: "infinall.ai", href: "/product" },
     { label: "Blog", href: "/blog" },
-    { label: "Waitlist", href: "/waitlist" },
   ],
   Company: [
     { label: "About", href: "/about" },
@@ -39,7 +38,6 @@ export function Footer() {
     <footer className="border-t border-white/5 bg-surface">
       <div className="container-wide px-6 py-16 md:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
-          {/* Brand */}
           <div className="lg:col-span-2">
             <Link to="/" className="flex items-center gap-2 mb-4">
               <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-violet to-cyan flex items-center justify-center text-sm font-bold text-background">
@@ -48,7 +46,7 @@ export function Footer() {
               <span className="text-lg font-bold text-foreground">OriMind</span>
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed mb-6 max-w-xs">
-              One Mind. Infinite Intelligence. The autonomous AI execution platform where work completes itself.
+              Research & innovation company building execution-first AI systems. Our flagship: infinall.ai.
             </p>
             <form onSubmit={handleNewsletter} className="flex gap-2">
               <input
@@ -67,7 +65,6 @@ export function Footer() {
             </form>
           </div>
 
-          {/* Links */}
           {Object.entries(footerLinks).map(([category, links]) => (
             <div key={category}>
               <h4 className="text-sm font-semibold text-foreground mb-4">{category}</h4>
