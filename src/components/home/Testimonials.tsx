@@ -18,7 +18,7 @@ const testimonials = [
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80",
   },
   {
-    quote: "As a solo founder, OriMind replaced three SaaS subscriptions and two freelancers. I describe what I need and it gets built.",
+    quote: "As a solo founder, infinall replaced three SaaS subscriptions and two freelancers. I describe what I need and it gets built.",
     name: "Priya Nair",
     role: "Founder, Artisan Commerce",
     image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80",

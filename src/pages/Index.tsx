@@ -1,26 +1,26 @@
 import { Hero } from "@/components/home/Hero";
 import { LogoMarquee } from "@/components/home/LogoMarquee";
-import { StatsSection } from "@/components/home/StatsSection";
-import { DifferentiationSection } from "@/components/home/DifferentiationSection";
-import { HowItWorks } from "@/components/home/HowItWorks";
+import { IntentSection } from "@/components/home/IntentSection";
+import { ProductPreview } from "@/components/home/ProductPreview";
 import { FeatureCards } from "@/components/home/FeatureCards";
-import { ShowcaseSection } from "@/components/home/ShowcaseSection";
-import { ExecutionCanvas } from "@/components/home/ExecutionCanvas";
+import { StickyScroll } from "@/components/home/StickyScroll";
+import { SubAgents } from "@/components/home/SubAgents";
+import { DifferentiationSection } from "@/components/home/DifferentiationSection";
 import { Testimonials } from "@/components/home/Testimonials";
-import { CtaSection } from "@/components/home/CtaSection";
+import { FinalCta } from "@/components/home/FinalCta";
 
 const Index = () => (
   <>
     <Hero />
     <LogoMarquee />
-    <StatsSection />
-    <DifferentiationSection />
-    <HowItWorks />
+    <IntentSection />
+    <ProductPreview />
     <FeatureCards />
-    <ShowcaseSection />
-    <ExecutionCanvas />
+    <StickyScroll />
+    <SubAgents />
+    <DifferentiationSection />
     <Testimonials />
-    <CtaSection />
+    <FinalCta />
   </>
 );
 
